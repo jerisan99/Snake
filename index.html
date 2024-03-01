@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/0e2feda799.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="respTableScore">
+        <div class="table">
+          <table id="highscoreTable" border="0">
+            <thead>
+              <tr>
+                <th></th>
+                <th><h3>Highscores</h3></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="rank">1.</td>
+                <td id="s1" class="highscoresTable"></td>
+                <td>
+                  <button class="delete" onclick="scoreDelete(0)">del.</button>
+                </td>
+              </tr>
+              <tr>
+                <td id="rank">2.</td>
+                <td id="s2" class="highscoresTable"></td>
+                <td>
+                  <button class="delete" onclick="scoreDelete(1)">del.</button>
+                </td>
+              </tr>
+              <tr>
+                <td id="rank">3.</td>
+                <td id="s3" class="highscoresTable"></td>
+                <td>
+                  <button class="delete" onclick="scoreDelete(2)">del.</button>
+                </td>
+              </tr>
+              <tr>
+                <td id="rank">4.</td>
+                <td id="s4" class="highscoresTable"></td>
+                <td>
+                  <button class="delete" onclick="scoreDelete(3)">del.</button>
+                </td>
+              </tr>
+              <tr>
+                <td id="rank">5.</td>
+                <td id="s5" class="highscoresTable"></td>
+                <td>
+                  <button class="delete" onclick="scoreDelete(4)">del.</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="status">
+          <h2 id="score">Score: 0</h2>
+        </div>
+        <div id="settingTitle">
+          <h2>
+            Settings:<button id="settingsButton">
+              <i class="fa-solid fa-arrow-right fa-rotate-90"></i>
+            </button>
+          </h2>
+          <div id="settings" class="settings-closed">
+            <h8>Music:</h8>
+            <button id="musicButton" onclick="toggleMusic()">
+              <i class="fa-solid fa-volume-mute"></i>
+            </button>
+            <h8>Speed:</h8>
+            <div class="selectDiv">
+              <select id="difficulty-select">
+                <option value="1">Slow</option>
+                <option value="1.5">Medium</option>
+                <option value="2">Fast</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+
+            <h8>Field Size:</h8>
+            <div class="selectDiv">
+              <select id="fieldSize">
+                <option value="20">20x20</option>
+                <option value="25">25x25</option>
+                <option value="30">30x30</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div> 
+
+            <h8>Snake Color:</h8>
+            <div class="selectDiv">
+              <select id="snakeColor">
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="brown">brown</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+
+            <h8>Food Color:</h8>
+            <div class="selectDiv">
+              <select id="foodColor">
+                <option value="yellow">yellow</option>
+                <option value="red">red</option>
+                <option value="orange">orange</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+
+            <h8>Playground Color:</h8>
+            <div class="selectDiv">
+              <select id="canvasColor">
+                <option value="black">black</option>
+                <option value="purple">purple</option>
+                <option value="turquoise">turquoise</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+
+            <h8>Walls:</h8>
+            <div class="selectDiv">
+              <select id="wallSetting">
+                <option value="">Off</option>
+                <option value="true">On</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div> 
+            
+
+            <h8>Keybinds: </h8>
+            <h10>t = Timeout / l = Restart</h10> 
+          </div>
+        </div>
+      </div>
+
+      <div id="playGround">
+        <canvas id="canvas" width="580" height="580"></canvas>
+      </div>
+
+      <div id="playButtons">
+        <span
+          class="fa-solid fa-pause fa-2xl"
+          role="button"
+          onclick="pauseSnake(true)"
+        ></span>
+        <button class="button" role="button" onclick="moveSnake('UP')">
+          UP
+        </button>
+        <button class="button" role="button" onclick="moveSnake('DOWN')">
+          DOWN
+        </button>
+        <button class="button" role="button" onclick="moveSnake('LEFT')">
+          LEFT
+        </button>
+        <button class="button" role="button" onclick="moveSnake('RIGHT')">
+          RIGHT
+        </button>
+      </div>
+    </div>
+
+    <button id="#difficulty-select"></button>
+    <script src="js/script.js"></script>
+  </body>
+</html>
